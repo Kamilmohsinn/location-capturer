@@ -1,0 +1,144 @@
+:root {
+  --bg1: #1e1b4b;
+  --bg2: #b91c1c;
+  --card: #fff7ed;
+  --text: #3f1d38;
+  --muted: #7c2d12;
+  --yes: #15803d;
+  --yes-hover: #166534;
+  --no: #9f1239;
+  --no-hover: #881337;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 20% 20%, #fca5a5 0%, transparent 35%),
+    linear-gradient(130deg, var(--bg1), var(--bg2));
+  padding: 20px;
+}
+
+.card {
+  width: min(560px, 100%);
+  background: var(--card);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 24px 60px rgba(63, 29, 56, 0.35);
+  border: 2px solid rgba(124, 45, 18, 0.18);
+  text-align: center;
+}
+
+h1 {
+  margin: 4px 0 14px;
+  font-size: 2rem;
+  line-height: 1.25;
+}
+
+#status {
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+
+.label {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 160ms ease, opacity 160ms ease, background-color 160ms ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+#yesBtn {
+  background: var(--yes);
+}
+
+#yesBtn:hover {
+  background: var(--yes-hover);
+}
+
+#noBtn {
+  background: var(--no);
+}
+
+#noBtn:hover {
+  background: var(--no-hover);
+}
+
+#noBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.reply {
+  min-height: 24px;
+  margin-top: 16px;
+  font-weight: 600;
+  color: var(--text);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.reply.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.location-box {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(124, 45, 18, 0.22);
+  text-align: left;
+}
+
+.location-box p {
+  margin: 6px 0;
+}
+
+#locationStatus {
+  margin-top: 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    padding: 24px;
+  }
+}

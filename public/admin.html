@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Locations</title>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>Captured Locations</h1>
+      <p class="hint">Enter admin key to load saved locations.</p>
+
+      <form id="adminForm" class="bar">
+        <input id="adminKey" type="password" placeholder="Enter ADMIN_KEY" required />
+        <button type="submit">Load</button>
+      </form>
+
+      <p id="status" class="status"></p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Latitude</th>
+              <th>Longitude</th>
+              <th>Accuracy</th>
+              <th>Timestamp</th>
+              <th>Received At</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </main>
+
+    <script src="config.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>

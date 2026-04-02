@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: geo-location-capture
+    runtime: docker
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /api/locations
+    disk:
+      name: location-data
+      mountPath: /app
+      sizeGB: 1
