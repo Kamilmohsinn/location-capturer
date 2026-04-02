@@ -43,6 +43,26 @@ A small Node.js + browser project that asks for a visitor's geolocation when the
 5. After deploy, open your live site URL:
     `https://<your-service-name>.onrender.com`
 
+## Deploy Backend On Vercel
+
+1. Push this folder to GitHub.
+2. In Vercel, click New Project and import the repo.
+3. Set the Root Directory to `geo-location-capture`.
+4. Leave the build command empty or use the default.
+5. Set these Environment Variables in Vercel:
+   - `MONGODB_URI` = your Atlas connection string
+   - `ADMIN_KEY` = `kamil` (or your own key)
+   - `MONGO_DNS_SERVERS` = `8.8.8.8,1.1.1.1` if your network has DNS issues
+6. Deploy.
+
+After deploy, your backend URLs will be:
+- `https://YOUR-VERCEL-APP.vercel.app/api/location`
+- `https://YOUR-VERCEL-APP.vercel.app/api/locations`
+- `https://YOUR-VERCEL-APP.vercel.app/api/admin/locations`
+
+If your frontend is on Netlify, set [public/config.js](public/config.js) to:
+`window.API_BASE_URL = "https://YOUR-VERCEL-APP.vercel.app";`
+
 ## Where To See Saved Locations
 
 - Open this endpoint in browser:
